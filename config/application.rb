@@ -25,3 +25,5 @@ module Stockx
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+# Steff testing 1st commit
