@@ -1,0 +1,20 @@
+<div class="container">
+  <hr>
+  <h3 class="pb-5">Estos son nuestros productos:</h3>
+  <div class="container-fluid">
+    <ul class="grid_products" style="list-style-type: none;">
+      <% @products.each do |product| %>
+      <li class>
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= product.name %></h5>
+          <p class="card-text"><%= product.description %></p>
+          <a href="#" class="btn btn-primary">Comprar</a>
+        </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
