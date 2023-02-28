@@ -15,11 +15,7 @@ class ProductsController < ApplicationController
     @user = User.find(current_user.id)
     @product = Product.new(product_params)
     @product.user = current_user
-<<<<<<< HEAD
-    authorize @product
-=======
-    @product.status = "available" #Paused
->>>>>>> master
+    @product.status = "available" # Paused
     if @product.save
       @user.seller = true
       @user.save
@@ -27,6 +23,7 @@ class ProductsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @product
   end
 
   def show
