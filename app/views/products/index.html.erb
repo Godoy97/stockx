@@ -1,17 +1,4 @@
 <div class="container">
-<% if current_user.seller %>
-
-  <h1>Hola <%= current_user.full_name %>!</h1>
-  <hr>
-  <h3>Estos son tus productos:</h3>
-  <ul>
-  <% @products_seller.each do |product| %>
-  <li><%= product.name %></li>
-  <% end %>
-  </ul>
-
-<% else %>
-
   <hr>
   <h3 class="pb-5">Estos son nuestros productos:</h3>
   <div class="container-fluid">
@@ -30,6 +17,4 @@
       <% end %>
     </ul>
   </div>
-<% end %>
-
 </div>
