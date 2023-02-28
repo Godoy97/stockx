@@ -1,0 +1,13 @@
+<h1>Orders#show</h1>
+<p>Find me in app/views/orders/show.html.erb</p>
+<div class=container>
+<%= @order.id %>
+<%= @order.address %>
+<%= @order.amount %>
+<%= @order.comment %>
+<%= @order.status %>
+<%if current_user == @order.product.user %>
+  <%= button_to "Vender!", status_path(status: "sold")  %>
+  <%= button_to "Rechazar!", status_path(status: "rejected")  %>
+<%end %>
+</div>
