@@ -7,3 +7,8 @@
   <p>Color: <%= @product.color %></p>
   <p>Vendedor: <%= @product.user.full_name %></p>
 </div>
+<% if policy(@product).edit? %>
+  <%= link_to "Edit this product", edit_product_path(@product) %> |
+<% end %>
+<!-- [...] -->
+<%= button_to "Destroy this product", @product, method: :delete if policy(@product).destroy? %>

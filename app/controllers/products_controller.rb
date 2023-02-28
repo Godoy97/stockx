@@ -3,16 +3,19 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @products_seller = Product.where(user_id: current_user.id)
+    @products = policy_scope(Product)
   end
 
   def new
     @product = Product.new
+    authorize @product
   end
 
   def create
     @user = User.find(current_user.id)
     @product = Product.new(product_params)
     @product.user = current_user
+    authorize @product
     if @product.save
       redirect_to product_path(@product)
     else
@@ -21,13 +24,16 @@ class ProductsController < ApplicationController
   end
 
   def show
+    authorize @product
   end
 
   def edit
+    authorize @product
   end
 
   def update
-    if @product.update
+    authorize @product
+    if @product.update(product_params)
       redirect_to product_path(@product)
     else
       render :edit, status: :unprocessable_entity
@@ -35,6 +41,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    authorize @product
     @product.destroy
     redirect_to products_path, status: :see_other
   end

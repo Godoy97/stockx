@@ -12,9 +12,10 @@
           <p class="card-text"><%= product.description %></p>
           <a href="#" class="btn btn-primary">Comprar</a>
         </div>
-        </div>
+        </div>|
       </li>
       <% end %>
     </ul>
   </div>
 </div>
+<%= link_to "New product", new_product_path if current_user.seller == true %>
