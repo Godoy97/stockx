@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     @user = User.find(current_user.id)
     @product = Product.new(product_params)
     @product.user = current_user
-    @product.status = "available" # Paused
+    # @product.status = "available" # Paused
     if @product.save
       @user.seller = true
       @user.save

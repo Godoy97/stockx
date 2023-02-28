@@ -4,10 +4,12 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
+    @orders = policy_scope(Order)
   end
 
   def new
     @order = Order.new
+    authorize @order
   end
 
   def create
@@ -22,12 +24,15 @@ class OrdersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @order
   end
 
   def show
+    authorize @order
   end
 
   def edit
+    authorize @order
   end
 
   def status
@@ -39,6 +44,7 @@ class OrdersController < ApplicationController
     end
     @order.save
     redirect_to edit_order_path(@order)
+    authorize @order
   end
 
   # def update
