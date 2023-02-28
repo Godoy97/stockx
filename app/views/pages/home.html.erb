@@ -1,2 +1,5 @@
 <h1>Pages#home Esta es la pagina principal</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<% @products.first(2).each do |product|%>
+<%= product.name %>
+<% end %>

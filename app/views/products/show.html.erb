@@ -7,3 +7,6 @@
   <p>Color: <%= @product.color %></p>
   <p>Vendedor: <%= @product.user.full_name %></p>
 </div>
+<div>
+<%= link_to "comprar", new_product_order_path(@product) %>
+</div>
