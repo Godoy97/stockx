@@ -15,7 +15,8 @@ class OrdersController < ApplicationController
     @order.product_id = @product.id
     @order.amount = @product.price
     @order.user = current_user
-    @order.status = "Pending" #Reservado en el view
+    @order.status = "Pending" #Reservado en el view, poner un popup de pago fake. que haga el cambio
+    #del status a pagado!
 
     if @order.save
       redirect_to product_path(@product)

@@ -76,6 +76,10 @@ group :test do
   gem "webdrivers"
 end
 
+#Project gems
+
 gem "devise", "~> 4.9"
 
 gem "pundit"
+
+gem "cloudinary"
