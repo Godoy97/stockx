@@ -1,21 +1,68 @@
 <div class="container">
-  <hr>
-  <h3 class="pb-5">Estos son nuestros productos:</h3>
-  <div class="container-fluid">
-    <ul class="grid_products" style="list-style-type: none;">
-      <% @products.each do |product| %>
-      <li class>
-        <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <%= cl_image_tag product.photo.key, height: 200, width: 400, crop: :scale, class:"card-img-top"%>
-          <h5 class="card-title"><%= product.name %></h5>
-          <p class="card-text"><%= product.description %></p>
-          <%= link_to "Comprar", product_path(product), class: "btn btn-primary"%>
+
+  <div class="container pt-5">
+    <div class="row">
+
+      <div class="col-1 text-start">
+        <h3>Talle</h3>
+        <h3>Marca</h3>
+        <h3>Color</h3>
+        <h3>Precio</h3>
+      </div>
+
+      <div class="col-11">
+
+        <div class="row justify-content-around ps-5">
+
+          <div class="col">
+            <%= link_to image_tag("https://media.glassdoor.com/sqll/10692/adidas-squarelogo-1499169651022.png", :class => "avatar-large" ), "/products?query=adidas", class: "d-print-block" %>
+          </div>
+
+          <div class="col">
+            <%= link_to image_tag("https://i.pinimg.com/originals/82/47/37/82473738c0e36e463be9de989ace02df.jpg", :class => "avatar-large" ), "/products?query=converse", class: "d-print-block" %>
+          </div>
+
+          <div class="col">
+            <%= link_to image_tag("https://i.pinimg.com/originals/c0/95/7a/c0957ad648fe871b097e19dfcad8d367.jpg", :class => "avatar-large" ), "/products?query=vans", class: "d-print-block" %>
+          </div>
+
+          <div class="col">
+            <%= link_to image_tag("https://dolphinswimware.co.uk/assets/cdn/brands/4bab81e280c8713edc63fe38c20b89de.jpg", :class => "avatar-large" ), "/products?query=nike", class: "d-print-block" %>
+          </div>
+
+          <div class="col">
+            <%= link_to image_tag("https://1.bp.blogspot.com/-klo0AKdkZO4/Wf_QA6FhqpI/AAAAAAAAAI4/e6_uoRCzrCYIW21zaXwLVQEOirS7ONMnACLcBGAs/s1600/C33u8YOVcAEPnS8.jpg", :class => "avatar-large" ), "/products?query=puma", class: "d-print-block" %>
+          </div>
+
+          <div class="col">
+            <%= link_to image_tag("https://hitconsultant.net/wp-content/uploads/2014/02/under-armour-logo-vector.jpg", :class => "avatar-large" ), "/products?query=under+armour", class: "d-print-block" %>
+          </div>
+
         </div>
+
+        <div class="row pt-4">
+
+          <div class="container-fluid">
+            <ul class="grid_products" style="list-style-type: none;">
+              <% @products.each do |product| %>
+              <li class>
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <%= cl_image_tag product.photo.key, height: 200, width: 400, crop: :scale, class:"card-img-top"%>
+                    <h5 class="card-title"><%= product.name %></h5>
+                    <p class="card-text"><%= product.description %></p>
+                    <%= link_to "Comprar", product_path(product), class: "btn btn-primary"%>
+                  </div>
+                </div>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+
         </div>
-      </li>
-      <% end %>
-    </ul>
+      </div>
+
+    </div>
   </div>
+
 </div>
-<%= link_to "Quiero Vender!", new_product_path %>

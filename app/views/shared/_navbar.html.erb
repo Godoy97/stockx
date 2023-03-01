@@ -9,6 +9,12 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="container-fluid justify-content-center">
+        <form class="d-flex" role="search" action="/products" accept-charset="UTF-8" method="get">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
+          <button class="btn btn-outline-success rounded" type="submit">Buscar</button>
+        </form>
+      </div>
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <%# <li class="nav-item active"> %>

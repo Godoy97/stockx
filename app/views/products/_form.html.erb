@@ -1,11 +1,11 @@
 <%= simple_form_for @product do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :brand %>
-  <%= f.input :size %>
-  <%= f.input :color %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :stock %>
+  <%= f.input :name, required: true%>
+  <%= f.input :description, required: true %>
+  <%= f.input :price, required: true %>
+  <%= f.input :stock, required: true %>
+  <%= f.input :photo, as: :file, required: true %>
+  <%= f.input :brand, required: true %>
+  <%= f.input :size, required: true %>
+  <%= f.input :color, required: true %>
   <%= f.button :submit %>
 <% end %>

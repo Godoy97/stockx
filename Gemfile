@@ -83,3 +83,6 @@ gem "devise", "~> 4.9"
 gem "pundit"
 
 gem "cloudinary"
+
+gem "pg_search"
+

@@ -1,5 +1,5 @@
 <%= simple_form_for [@product, @order] do |f| %>
   <%= f.input :comment %>
-  <%= f.input :address %>
+  <%= f.input :address, required: true %>
   <%= f.button :submit %>
 <% end %>

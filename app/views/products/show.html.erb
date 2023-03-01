@@ -1,19 +1,22 @@
-<div class="container">
-  <h1><%= @product.name %></h1>
-  <h4><%= @product.brand %></h4>
-  <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fit %>
-  <p>Descripcion: <%= @product.description %></p>
-  <p>Precio: <%= @product.price %>$</p>
-  <p>Talle: <%= @product.size %></p>
-  <p>Color: <%= @product.color %></p>
-  <p>Vendedor: <%= @product.user.full_name %></p>
-</div>
-<% if policy(@product).edit? %>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-<% end %>
-<!-- [...] -->
-<%= button_to "Destroy this product", @product, method: :delete if policy(@product).destroy? %>
-<div>
-<%= link_to "comprar", new_product_order_path(@product) %>
-<%# Cambiar esto te tiene que llevar al registro o algo por el estilo %>
+<head>
+  <link rel="product-card" href="app/assets/stylesheets/components/_product-card.scss">
+</head>
+<div class="card-product">
+  <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
+  <%= cl_image_tag @product.photo.key, style: "height: 100%; width: 480px; object-fit: cover;" %>
+  <div class="card-product-infos">
+    <h2><%= @product.name %></h1>
+    <p><strong><%= @product.brand %></strong></p>
+    <p>Talla: <%= @product.size %></p>
+    <p>Color-wave: <%= @product.color %></p>
+    <p><strong>Vendedor: <%= @product.user.full_name %></strong></p>
+    <p><strong><%= link_to "Comprar", new_product_order_path(@product), class: "btn btn-flat" %></strong></p>
+  </div>
+  <div class="card-product-infos">
+    <% if policy(@product).edit? %>
+      <%= link_to "Edit this product", edit_product_path(@product), class: "btn btn-ghost" %>
+      <p></p>
+      <%= button_to "Destroy this product", @product, class: "btn btn-ghost", method: :delete if policy(@product).destroy? %>
+    <% end %>
+  </div>
 </div>
