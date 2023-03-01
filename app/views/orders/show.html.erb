@@ -6,8 +6,16 @@
 <%= @order.amount %>
 <%= @order.comment %>
 <%= @order.status %>
-<%if current_user == @order.product.user %>
-  <%= button_to "Vender!", status_path(status: "sold")  %>
-  <%= button_to "Rechazar!", status_path(status: "rejected")  %>
+<%if (current_user == @order.product.user) && (@order.status == "pending") %>
+<%# Solo si la orden esta en estado "Pending" %>
+  <%= button_to "Vender!", status_path(status: "waiting-payment")  %>
+  <%= button_to "Rechazar", status_path(status: "rejected")  %>
 <%end %>
+
+<%if (current_user != @order.product.user) && (@order.status == "waiting-payment") %>
+  <%= button_to "Pagar!", status_path(status: "sold")  %>
+  <%# Esto tiene que abrir un form de pago y que cuando se mande tambien
+  envie el status: "sold"%>
+<% end %>
 </div>
+<%# el flow de condiciones es: pending -> waiting-payment -> sold %>

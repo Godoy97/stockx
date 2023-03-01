@@ -6,16 +6,16 @@
       <% @products.each do |product| %>
       <li class>
         <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
+          <%= cl_image_tag product.photo.key, height: 200, width: 400, crop: :scale, class:"card-img-top"%>
           <h5 class="card-title"><%= product.name %></h5>
           <p class="card-text"><%= product.description %></p>
-          <a href="#" class="btn btn-primary">Comprar</a>
+          <%= link_to "Comprar", product_path(product), class: "btn btn-primary"%>
         </div>
-        </div>|
+        </div>
       </li>
       <% end %>
     </ul>
   </div>
 </div>
-<%= link_to "New product", new_product_path if current_user.seller == true %>
+<%= link_to "Quiero Vender!", new_product_path %>

@@ -10,10 +10,21 @@ class OrderPolicy < ApplicationPolicy
     true
   end
 
+  def index?
+    true
+  end
+
+  def new?
+    true
+  end
+
   def create?
     true
   end
 
+  def status?
+    true
+  end
   # def update?
   #   record.user == user
   #   # record: the restaurant passed to the `authorize` method in controller

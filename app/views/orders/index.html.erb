@@ -1,4 +1,19 @@
 <h1>Orders#index</h1>
 <p>Find me in app/views/orders/index.html.erb</p>
 <%# Esto deberia mostrar el dashboard %>
-<%= link_to "New Order", new_order_path if policy(Order).new? %>
+<div class="container-fluid">
+  <ul class="grid_products" style="list-style-type: none;">
+    <% @orders.each do |order| %>
+    <li class>
+      <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <%= cl_image_tag order.product.photo.key, height: 200, width: 400, crop: :scale, class:"card-img-top"%>
+        <h5 class="card-title">$<%= order.amount %></h5>
+        <p class="card-text"><%= order.status %></p>
+        <%= link_to "Detalles", order_path(order), class: "btn btn-primary"%>
+      </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
