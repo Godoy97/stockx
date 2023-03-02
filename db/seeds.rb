@@ -23,13 +23,13 @@ buyer = User.create!(
 
 # Create products for seller
 product1 = seller.products.create!(
-  name: 'Product 1',
-  description: 'This is product 1',
-  price: 10.0,
+  name: 'Yeezy Saltcore',
+  description: 'Perfectas condiciones',
+  price: 100.0,
   stock: 10,
-  brand: 'Brand 1',
+  brand: 'Adidas',
   size: '10',
-  color: 'Red'
+  color: 'Azul'
 )
 
 file = URI.open('https://res.cloudinary.com/dcfoaujd5/image/upload/v1677697991/development/adidas-yeezy-boost-350-v2-salt-hq2060-store-list-1_sgjujb.jpg')
@@ -37,25 +37,25 @@ product1.photo.attach(io: file, filename: "p1.png", content_type: "image/jpg")
 #Cambiar atrribute photo for heroku!!!! Danger
 
 product2 = seller.products.create!(
-  name: 'Product 2',
-  description: 'This is product ',
+  name: 'Yeezy Bred',
+  description: 'Estado DS',
   price: 20.0,
   stock: 50,
-  brand: 'Brand 2',
+  brand: 'Adidas',
   size: '11',
-  color: 'Blue',
+  color: 'Negro'
 )
 file = URI.open('https://res.cloudinary.com/dcfoaujd5/image/upload/v1677697983/development/94407_01.jpg_wqotlw.jpg')
 product2.photo.attach(io: file, filename: "p2.png", content_type: "image/jpg")
 
 product3 = seller.products.create!(
-  name: 'Product 3',
-  description: 'This is product 3',
-  price: 40.0,
+  name: 'Jordans',
+  description: 'Como nuevas!',
+  price: 10.0,
   stock: 50,
-  brand: 'Brand 3',
+  brand: 'Nike',
   size: '9',
-  color: 'Black',
+  color: 'Rojo'
 )
 file = URI.open('https://res.cloudinary.com/dcfoaujd5/image/upload/v1677697973/development/DQ8426_060_P2_dcuqei.jpg')
 product3.photo.attach(io: file, filename: "p3.png", content_type: "image/jpg")

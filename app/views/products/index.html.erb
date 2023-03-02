@@ -6,8 +6,9 @@
       <% @products.each do |product| %>
       <li class>
         <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <%= cl_image_tag product.photo.key, height: 200, width: 400, crop: :scale, class:"card-img-top"%>
+        <div class="card-body" style="height: 200px;">
+          <%# <%= cl_image_tag product.photo.key, height: 200, width: 400, crop: :fit, class:"card-img-top"%>
+          <%= cl_image_tag product.photo.key, height: 180, width: 200, crop: :fit, class:"card-img-top", style: "object-fit: cover"%>
           <h5 class="card-title"><%= product.name %></h5>
           <p class="card-text"><%= product.description %></p>
           <%= link_to "Comprar", product_path(product), class: "btn btn-primary"%>
