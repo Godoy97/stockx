@@ -7,20 +7,25 @@
       <%= link_to "Book now", "#", class: "btn btn-flat" %>
     </div>
   </div>
+  <div class="container pt-3">
+    <div class="row">
+      <div class="col-6">
+        <div class="container double-grid">
+          <%= link_to image_tag("https://3.bp.blogspot.com/-ap8NaPrARk4/TcSB2_vn02I/AAAAAAAABsA/1RKW5Y2a2KM/s640/adidas-originals-highrise-sneakers-5.jpg", class: "avatar-square"), "/products?query=adidas" %>
+          <%= link_to image_tag("https://i.pinimg.com/originals/4f/cb/0b/4fcb0b9215e87aa3aa0afaf2e56456f7.jpg", class: "avatar-square"), "/products?query=vans" %>
+          <%= link_to image_tag("https://i.pinimg.com/736x/8a/34/3e/8a343e3faed1b7ed09c885b6816cb957.jpg", class: "avatar-square"), "/products?query=nike" %>
+          <%= link_to image_tag("https://www.kidinn.com/f/13760/137609782_4/puma-x-ray-2-square.jpg", class: "avatar-square"), "/products?query=puma" %>
+        </div>
+      </div>
 
-  <div class="container double-grid">
-    <div class="container double-grid">
-      <%= link_to "yeezy", products_path %>
-      <h1>hola</h1>
-      <h1>hola</h1>
-      <h1>hola</h1>
-    </div>
-    <div class="container text-center">
-      <h1>About Us</h1>
+      <div class="col-6 text-center">
+        <%= link_to image_tag("https://i.pinimg.com/originals/de/38/b4/de38b454586911899beb910b75440c21.jpg", class: "img-fluid") %>
+        <h1><%= link_to "About us", "#", style:"color: #000000; text-decoration: none;" %></h1>
+      </div>
     </div>
   </div>
 
-  <div class="container-fluid">
+  <div class="container pb-3">
     <ul class="grid_products" style="list-style-type: none;">
       <%  @products.first(4).each do |product| %>
         <li class>
