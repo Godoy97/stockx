@@ -1,5 +1,39 @@
-<h1>Pages#home Esta es la pagina principal</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<% @products.first(2).each do |product|%>
-<%= product.name %>
-<% end %>
+<div class="container" id="Home">
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+    <div class="container">
+      <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+      <p>Change your life and learn to code at one of our campuses around the world.</p>
+      <%= link_to "Book now", "#", class: "btn btn-flat" %>
+    </div>
+  </div>
+
+  <div class="container double-grid">
+    <div class="container double-grid">
+      <%= link_to "yeezy", products_path %>
+      <h1>hola</h1>
+      <h1>hola</h1>
+      <h1>hola</h1>
+    </div>
+    <div class="container text-center">
+      <h1>About Us</h1>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <ul class="grid_products" style="list-style-type: none;">
+      <%  @products.first(4).each do |product| %>
+        <li class>
+          <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <%= cl_image_tag product.photo.key, height: 200, width: 400, crop: :scale, class:"card-img-top"%>
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text"><%= product.description %></p>
+            <%= link_to "Comprar", product_path(product), class: "btn btn-primary"%>
+          </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
