@@ -1,9 +1,14 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
   def index
-    @products = Product.all
+    # @products = Product.all
     @products_seller = Product.where(user_id: current_user.id)
-    @products = policy_scope(Product)
+    if params[:query].present?
+      @products = policy_scope(Product).search_by_name_and_brand(params[:query])
+    else
+    # @products = Product.all
+      @products = policy_scope(Product)
+    end
   end
 
   def new
