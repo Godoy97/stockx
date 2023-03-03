@@ -1,4 +1,10 @@
 // Specific CSS for your home-page
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .grid_products {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

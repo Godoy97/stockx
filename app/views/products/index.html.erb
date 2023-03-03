@@ -14,7 +14,7 @@
 
         <div class="row justify-content-around ps-5">
 
-          <div class="col">
+          <div class="col" >
             <%= link_to image_tag("https://media.glassdoor.com/sqll/10692/adidas-squarelogo-1499169651022.png", :class => "avatar-large" ), "/products?query=adidas", class: "d-print-block" %>
           </div>
 
@@ -40,8 +40,7 @@
 
         </div>
 
-        <div class="row pt-4">
-
+        <div class="row pt-4" >
           <div class="container-fluid">
             <ul class="grid_products" style="list-style-type: none;">
               <% @products.each do |product| %>
@@ -56,13 +55,13 @@
                 </div>
               </li>
               <% end %>
-            </ul>
+            </ul >
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
+
+
 
 </div>
