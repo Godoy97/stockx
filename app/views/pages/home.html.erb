@@ -4,7 +4,7 @@
     <div class="container">
       <h1>YEEZY BOOST 350 VERDE FLUOR Y BLANCO!</h1>
       <p> Con una amortiguación especial para una mayor comodidad.</p>
-      <%= link_to "Book now", "#", class: "btn btn-flat" %>
+      <%= link_to "Book now", "#", class: "btn btn-flat-banner" %>
     </div>
   </div>
   <div class="container pt-3">
@@ -34,7 +34,7 @@
             <%= cl_image_tag product.photo.key, height: 200, width: 400, crop: :scale, class:"card-img-top"%>
             <h5 class="card-title"><%= product.name %></h5>
             <p class="card-text"><%= product.description %></p>
-            <%= link_to "Comprar", product_path(product), class: "btn btn-primary"%>
+            <%= link_to "Comprar", product_path(product), class: "btn btn-flat"%>
           </div>
           </div>
         </li>

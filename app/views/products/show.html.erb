@@ -10,7 +10,7 @@
     <p>Talla: <%= @product.size %></p>
     <p>Color-wave: <%= @product.color %></p>
     <p><strong>Vendedor: <%= @product.user.full_name %></strong></p>
-    <p><strong><%= link_to "Comprar", new_product_order_path(@product), class: "btn btn-flat" %></strong></p>
+    <%= link_to "Comprar", new_product_order_path(@product), class: "btn btn-flat" %>
   </div>
   <div class="card-product-infos">
     <% if policy(@product).edit? %>
