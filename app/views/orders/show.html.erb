@@ -1,21 +1,37 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
-<div class=container>
-<%= @order.id %>
-<%= @order.address %>
-<%= @order.amount %>
-<%= @order.comment %>
-<%= @order.status %>
-<%if (current_user == @order.product.user) && (@order.status == "pending") %>
-<%# Solo si la orden esta en estado "Pending" %>
-  <%= button_to "Vender!", status_path(status: "waiting-payment")  %>
-  <%= button_to "Rechazar", status_path(status: "rejected")  %>
-<%end %>
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-4 order-2 order-lg-1">
+                  <%= cl_image_tag @order.product.photo.key, class: "img-fluid"%>
+              </div>
+              <div class="card-product-infos col-md-10 col-lg-6 col-xl-8 order-1 order-lg-2">
+                <h2><%= @order.product.name %></h1>
+                <p><strong><%= @order.product.brand %></strong></p>
+                <p>Talla: <%= @order.product.size %></p>
+                <p>Color-wave: <%= @order.product.color %></p>
+                <p><strong>Vendedor: <%= @order.product.user.full_name %></strong></p>
+                <p><strong>Estado: <%= @order.status %></strong></p>
+                <%if (current_user == @order.product.user) && (@order.status == "pending") %>
+                <%# Solo si la orden esta en estado "Pending" %>
+                  <%= button_to "Vender!", status_path(status: "waiting-payment"), class: "btn btn-success"  %>
+                  <br>
+                  <%= button_to "Rechazar", status_path(status: "rejected"), class: "btn btn-danger"  %>
+                <%end %>
 
-<%if (current_user != @order.product.user) && (@order.status == "waiting-payment") %>
-  <%= button_to "Pagar!", status_path(status: "sold")  %>
-  <%# Esto tiene que abrir un form de pago y que cuando se mande tambien
-  envie el status: "sold"%>
-<% end %>
-</div>
-<%# el flow de condiciones es: pending -> waiting-payment -> sold %>
+                <%if (current_user != @order.product.user) && (@order.status == "waiting-payment") %>
+                  <%= button_to "Pagar!", status_path(status: "sold"), class: "btn btn-success"  %>
+                        <%# Esto tiene que abrir un form de pago y que cuando se mande tambien
+                  envie el status: "sold"%>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
