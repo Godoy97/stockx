@@ -1,22 +1,26 @@
-<div class="container">
-  <% @orders.each do |order| %>
-    <div class="row">
-      <div class="col-3"></div>
-
-      <div class="col-6">
-        <div class="container py-5">
-          <div class="card-product" style="list-style-type: none;">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
-              <h2><%= order.comment %> </h2>
-              <p> <%= order.status %></p>
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <% @orders.each do |order| %>
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-4 order-2 order-lg-1">
+                  <%= cl_image_tag order.product.photo.key, class: "img-fluid"%>
+              </div>
+              <div class="card-product-infos col-md-10 col-lg-6 col-xl-8 order-1 order-lg-2">
+                <h2><%= order.product.name %></h1>
+                <p><strong><%= order.product.brand %></strong></p>
+                <p><strong>Comentario: <%= order.comment %></strong></p>
+                <p><strong>Estado: <%= order.status %></strong></p>
+                <%= link_to "Detalles", order_path(order), class: "btn btn-primary"%>
+              </div>
             </div>
           </div>
         </div>
+        <% end %>
       </div>
-
-      <div class="col-3"></div>
-
     </div>
-  <% end %>
-</div>
+  </div>
+</section>
