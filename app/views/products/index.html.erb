@@ -2,13 +2,43 @@
 
   <div class="container pt-5">
     <div class="row">
-
       <div class="col-1 text-start">
-        <h3>Talle</h3>
-        <h3>Marca</h3>
-        <h3>Color</h3>
-        <h3>Precio</h3>
+
+      <div class="row">
+
+        <div class="col">
+        <button class="btn btn-link text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1"><h3 style="color: black">Talle</h3></button>
+          <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div>
+              <ul>
+                <li class="list-unstyled"><%= link_to "43", "/products?query=43", class:"text-decoration-none", style: "color: black" %></li>
+                <li class="list-unstyled"><%= link_to "42", "/products?query=42", class:"text-decoration-none", style: "color: black" %></li>
+                <li class="list-unstyled"><%= link_to "41", "/products?query=41", class:"text-decoration-none", style: "color: black" %></li>
+                <li class="list-unstyled"><%= link_to "40", "/products?query=40", class:"text-decoration-none", style: "color: black" %></li>
+                <li class="list-unstyled"><%= link_to "39", "/products?query=39", class:"text-decoration-none", style: "color: black" %></li>
+                <li class="list-unstyled"><%= link_to "38", "/products?query=38", class:"text-decoration-none", style: "color: black" %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+        <button class="btn btn-link text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2"><h3 style="color: black">Color</h3></button>
+          <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <div>
+              <ul>
+                <li class="list-unstyled"><%= link_to "Blanco", "/products?query=blanco", class:"text-decoration-none", style: "color: black" %></li>
+                <li class="list-unstyled"><%= link_to "Negro", "/products?query=42", class:"text-decoration-none", style: "color: black" %></li>
+                <li class="list-unstyled"><%= link_to "Rojo", "/products?query=41", class:"text-decoration-none", style: "color: black" %></li>
+                <li class="list-unstyled"><%= link_to "Amarillo", "/products?query=40", class:"text-decoration-none", style: "color: black" %></li>
+                <li class="list-unstyled"><%= link_to "Verde", "/products?query=39", class:"text-decoration-none", style: "color: black" %></li>
+                <li class="list-unstyled"><%= link_to "Violeta", "/products?query=38", class:"text-decoration-none", style: "color: black" %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
 
       <div class="col-11">
 
