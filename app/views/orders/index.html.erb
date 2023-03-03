@@ -5,7 +5,7 @@
               <li class>
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
-                    <img src="" class="card-img-top" alt="">
+                    <%= cl_image_tag order.product.photo.key, class:"card-img-top pb-3" %>
                     <h5 class="card-title"><%= link_to "Numero de orden: #{order.id}", order_path(order), class:"text-decoration-none" %></h5>
                     <p class="card-text"><%= "Comentarios: #{order.comment}" %></p>
                     <p class="card-text"><%= order.status %></p>
