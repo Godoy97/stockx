@@ -13,6 +13,9 @@
                 <p><strong><%= @order.product.brand %></strong></p>
                 <p>Talla: <%= @order.product.size %></p>
                 <p>Color-wave: <%= @order.product.color %></p>
+                <p>Stock: <%= @order.product.stock %></p>
+                <p>Precio 💰: <%= @order.product.price %></p>
+
                 <p><strong>Vendedor: <%= @order.product.user.full_name %></strong></p>
                 <p><strong>Estado: <%= @order.status %></strong></p>
                 <%if (current_user == @order.product.user) && (@order.status == "pending") %>
