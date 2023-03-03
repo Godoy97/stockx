@@ -6,7 +6,7 @@ class Product < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_brand,
-    against: [ :name, :brand ],
+    against: [ :name, :brand, :size, :color, :price],
     using: {
       tsearch: { prefix: true }
     }
