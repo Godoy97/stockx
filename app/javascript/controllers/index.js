@@ -4,8 +4,5 @@
 
 import { application } from "./application"
 
-import HeightController from "./height_controller"
-application.register("height", HeightController)
-
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
