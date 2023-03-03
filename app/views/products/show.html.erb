@@ -10,6 +10,7 @@
       <p><strong><%= @product.brand %></strong></p>
       <p>Talla: <%= @product.size %></p>
       <p>Color-wave: <%= @product.color %></p>
+      <p>Precio 💰: $<%= @product.price %></p>
       <% if current_user != @product.user %>
         <p><strong>Vendedor: <%= @product.user.full_name %></strong></p>
         <%= link_to "Comprar", new_product_order_path(@product), class: "btn btn-flat" %>
