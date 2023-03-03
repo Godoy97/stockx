@@ -24,7 +24,7 @@
     <ul class="grid_products" style="list-style-type: none;">
       <%  @products.first(4).each do |product| %>
         <li>
-          <div class="card" style="width: 18rem;">
+          <div class="card shadow" style="width: 18rem;">
           <div class="card-body">
             <%= cl_image_tag product.photo.key, height: 200, width: 400, crop: :scale, class:"card-img-top"%>
             <h5 class="card-title"><%= product.name %></h5>
