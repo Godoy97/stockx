@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="container-fluid justify-content-center">
         <form class="d-flex" role="search" action="/products" accept-charset="UTF-8" method="get">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="query">
           <button class="btn btn-outline-success rounded" type="submit">Buscar</button>
         </form>
       </div>
@@ -21,13 +21,13 @@
             <%# <%= link_to "Vender", "#", class: "nav-link" if current_user.seller == true %>
           <%# </li> %>
           <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "Inicio", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Productos", products_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "About", about_us_path, class: "nav-link" %>
+            <%= link_to "Nosotros", about_us_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <% if current_user.photo.attached? %>
